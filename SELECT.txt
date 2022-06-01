@@ -1,0 +1,17 @@
+SELECT name, release FROM albums 
+WHERE EXTRACT(YEAR FROM release) = 2018
+
+SELECT name, time FROM tracks
+WHERE time = (SELECT MAX(time) from tracks)
+
+SELECT name FROM tracks
+WHERE time >= 210
+
+SELECT name FROM collections 
+WHERE release >= '01.01.2018' and release < '01.01.2021'
+
+SELECT name FROM artists 
+WHERE name NOT LIKE '%% %%'
+
+SELECT name FROM tracks 
+WHERE lower(name) LIKE '%%моя%%'
